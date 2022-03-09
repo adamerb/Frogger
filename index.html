@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Press+Start+2P&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="styles.css"/>
+    <title>Frogger</title>
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <h1 class="header-text">FROGGER</h1>
+        </div>
+        
+    </header>
+    <div class="game-info">
+        <h2>SECONDS LEFT: <span id="time-left">30</span></h2>
+    </div>
+
+    <div class="game-area">
+        <div class="grid">
+            
+            <!-- Safe Zone -->
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="ending-block"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+    
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+    
+            <!-- Logs -->
+            <!-- Top row of logs that move to the left -->
+            <div class="log-left l1"></div>
+            <div class="log-left l2"></div>
+            <div class="log-left l3"></div>
+            <div class="log-left l4"></div>
+            <div class="log-left l5"></div>
+            <div class="log-left l1"></div>
+            <div class="log-left l2"></div>
+            <div class="log-left l3"></div>
+            <div class="log-left l4"></div>
+    
+            <!-- Bottom row of logs that move to the right -->
+            <div class="log-right l5"></div>
+            <div class="log-right l1"></div>
+            <div class="log-right l2"></div>
+            <div class="log-right l3"></div>
+            <div class="log-right l4"></div>
+            <div class="log-right l5"></div>
+            <div class="log-right l1"></div>
+            <div class="log-right l2"></div>
+            <div class="log-right l3"></div>
+    
+            <!-- Safe Zone -->
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+    
+            <!-- Cars -->
+            <!-- Top row of cars that move to the left -->
+            <div class="car-left c2"></div>
+            <div class="car-left c3"></div>
+            <div class="car-left cl1"></div>
+            <div class="car-left c2"></div>
+            <div class="car-left c3"></div>
+            <div class="car-left cl1"></div>
+            <div class="car-left c2"></div>
+            <div class="car-left c3"></div>
+            <div class="car-left cl1"></div>
+    
+            <!-- Bottom row of cars that move to the rightt -->
+            <div class="car-right cr1"></div>
+            <div class="car-right c2"></div>
+            <div class="car-right c3"></div>
+            <div class="car-right cr1"></div>
+            <div class="car-right c2"></div>
+            <div class="car-right c3"></div>
+            <div class="car-right cr1"></div>
+            <div class="car-right c2"></div>
+            <div class="car-right c3"></div>
+    
+            <!-- Safe Zone -->
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="test"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+    
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="starting-block"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="start-btn">
+        <button id="start-pause-button">CLICK HERE TO PLAY</button>
+    </div>
+    <h3 id="result"><span id="result"></span></h3>
+    
+
+    <script src="app.js"></script>
+</body>
+</html>
