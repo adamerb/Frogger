@@ -44,9 +44,9 @@ const moveFrog = (e) => {
             }
             break; 
     }
-    
-    console.log('sci',currentIndex)
-        if (currentIndex>=63){
+   
+    console.log('current index: ',currentIndex)
+        if (currentIndex>=63 || currentIndex>=36 && currentIndex<=44 || currentIndex<=17){
             squares[currentIndex].style.backgroundColor='green'
             squares[currentIndex].classList.add('frog')
         } else if (currentIndex<63 && currentIndex>=45){
@@ -56,10 +56,11 @@ const moveFrog = (e) => {
             squares[currentIndex].style.backgroundColor='aqua'
             squares[currentIndex].classList.add('frog')
         } else if (currentIndex<36 && currentIndex>=18 && squares[currentIndex].classList.contains('l1')||squares[currentIndex].classList.contains('l2')||squares[currentIndex].classList.contains('l3')){
-            squares[currentIndex].style.background='no-repeat center/100% url("./images/frog.png"),no-repeat center/500% url("./images/log.png")'            
-        }
+            squares[currentIndex].style.background='no-repeat center/100% url("./images/frog.png"),no-repeat center/500% url("./images/log.png")'   
+            squares[currentIndex].classList.add('frog')       
+        } 
         
-    squares[currentIndex].classList.add('frog')
+        // squares[currentIndex].classList.add('frog')
 
 }
 
@@ -174,13 +175,15 @@ const lose = () => {
         squares[currentIndex].classList.contains('l5') ||
         currentTime <= 0
         ){
+        squares[currentIndex].classList.remove('frog')
+        squares[currentIndex].style.background=null
         resultDisplay.textContent = 'You Lose!'
         clearInterval(timerId)
         clearInterval(outcomeTimerId)
-        squares[currentIndex].classList.remove('frog')
         document.removeEventListener('keyup', moveFrog)
     }
 }
+
 
 const win = () => {
     if (squares[currentIndex].classList.contains('ending-block')){
