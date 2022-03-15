@@ -2,6 +2,9 @@ body {
     background-color: black;
     overflow: hidden;
 }
+/* main {
+    display: flex;
+} */
 
 header {
     display: flex;
@@ -14,27 +17,25 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: no-repeat center/575px url('./images/log.png');
+    background: no-repeat center/630px url('./images/log.png');
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
+    margin-top: 10px;
+    padding-left: 70px;
+    margin-right: 30px;
 }
 
 .header-text {
     display: flex;
-    font-size: 64px;
+    font-size: 60px;
     font-family: 'Press Start 2P', cursive;
-    margin-left: 80px;
     text-shadow: 2px 2px yellow, -2px -2px yellowgreen;
     color: green;
+    flex-direction: row;
+    text-align: center;
 }
 
-.game-area {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    background-color: black
-}
 
 .game-info {
     font-family: 'Press Start 2P', cursive;
@@ -44,6 +45,26 @@ header {
     justify-content: space-evenly;
     align-content: center;
     font-size: 8px;
+    text-align: center;
+    width: 100%;
+    
+}
+
+.viewbox {
+display: flex;
+width: 100%;
+justify-content: center;
+}
+
+.game-area {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    margin-right: 40px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+   
 }
 
 .grid {
@@ -51,7 +72,8 @@ header {
     width: 360px;
     display: flex;
     flex-wrap: wrap;
-    background-color: green
+    background-color: green;
+    border: solid 1px white;
 }
 
 .grid div {
@@ -124,7 +146,7 @@ header {
     display: flex;
     justify-content: center;
     align-content: center;
-    margin-top: 20px;
+
 }
 
 #result {
@@ -141,4 +163,74 @@ header {
     color: white;
     font-family: 'Press Start 2P', cursive;
     background-color: black;
+    border-radius: 20px;
+}
+
+.instruction-area {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: 8px;
+    height: 400px;
+    width: 300px;
+    margin-right: 40px;
+    text-align: center;
+
+}
+
+
+
+.frog-directional-buttons{
+    display:flex;
+    font-size: 8px;
+    height: 100%;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+}
+.controls-heading {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 80px;
+
+}
+
+.arrow-up {
+    width: 30px; 
+    height: 20px; 
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.arrow-right {
+    width: 30px; 
+    height: 20px; 
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.arrow-down {
+    width: 30px; 
+    height: 20px; 
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.arrow-left{
+    width: 30px; 
+    height: 20px; 
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
 }

@@ -26,6 +26,7 @@ const moveFrog = (e) => {
                 currentIndex -= 1
             }
             break;
+        
         case 'ArrowUp' :
             if (currentIndex - width >=0){
                 currentIndex -= width

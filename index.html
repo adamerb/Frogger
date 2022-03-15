@@ -1,133 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Press+Start+2P&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="styles.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="javascript" href="app.js">
     <title>Frogger</title>
 </head>
+
 <body>
     <header>
         <div class="header-logo">
-            <h1 class="header-text">FROGGER</h1>
+            <h1 class="header-text">FROG<br>CROSSING</h1>
         </div>
         
     </header>
-    <div class="game-info">
-        <h2>SECONDS LEFT: <span id="time-left">30</span></h2>
-    </div>
-
-    <div class="game-area">
-        <div class="grid">
-            
-            <!-- Safe Zone -->
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div class="ending-block"></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
     
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-    
-            <!-- Logs -->
-            <!-- Top row of logs that move to the left -->
-            <div class="log-left l1"></div>
-            <div class="log-left l2"></div>
-            <div class="log-left l3"></div>
-            <div class="log-left l4"></div>
-            <div class="log-left l5"></div>
-            <div class="log-left l1"></div>
-            <div class="log-left l2"></div>
-            <div class="log-left l3"></div>
-            <div class="log-left l4"></div>
-    
-            <!-- Bottom row of logs that move to the right -->
-            <div class="log-right l5"></div>
-            <div class="log-right l1"></div>
-            <div class="log-right l2"></div>
-            <div class="log-right l3"></div>
-            <div class="log-right l4"></div>
-            <div class="log-right l5"></div>
-            <div class="log-right l1"></div>
-            <div class="log-right l2"></div>
-            <div class="log-right l3"></div>
-    
-            <!-- Safe Zone -->
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-    
-            <!-- Cars -->
-            <!-- Top row of cars that move to the left -->
-            <div class="car-left c2"></div>
-            <div class="car-left c3"></div>
-            <div class="car-left cl1"></div>
-            <div class="car-left c2"></div>
-            <div class="car-left c3"></div>
-            <div class="car-left cl1"></div>
-            <div class="car-left c2"></div>
-            <div class="car-left c3"></div>
-            <div class="car-left cl1"></div>
-    
-            <!-- Bottom row of cars that move to the rightt -->
-            <div class="car-right cr1"></div>
-            <div class="car-right c2"></div>
-            <div class="car-right c3"></div>
-            <div class="car-right cr1"></div>
-            <div class="car-right c2"></div>
-            <div class="car-right c3"></div>
-            <div class="car-right cr1"></div>
-            <div class="car-right c2"></div>
-            <div class="car-right c3"></div>
-    
-            <!-- Safe Zone -->
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div class="test"></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-    
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div class="starting-block"></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+    <main>
+        <div class="game-info">
+            <h2>SECONDS LEFT: <span id="time-left">30</span></h2>
         </div>
-    </div>
+        <div class="viewbox">
+        <article class="instruction-area">
+            <h2>INSTRUCTIONS:</h2>
+                <p>Use the arrow keys or the controls to the right to navigate the frog from the pond to the golden crown</p>
+                <p>You have 30 seconds to cross the road and the river.</p>
+                <p>Beware of merciless drivers while crossing the road</p>
+                <p>The current in the river is too strong to swim.</p>
+                <p>Try timing your jumps across the logs to cross the river.</p>
+                <p>Good Luck!</p>
+        </article>
 
-    <div class="start-btn">
-        <button id="start-pause-button">CLICK HERE TO PLAY</button>
-    </div>
-    <h3 id="result"><span id="result"></span></h3>
-    
+        <div class="game-area">
+            <div class="grid">
+
+                <!-- Safe Zone -->
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="ending-block"></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+                <!-- Logs -->
+                <!-- Top row of logs that move to the left -->
+                <div class="log-left l1"></div>
+                <div class="log-left l2"></div>
+                <div class="log-left l3"></div>
+                <div class="log-left l4"></div>
+                <div class="log-left l5"></div>
+                <div class="log-left l1"></div>
+                <div class="log-left l2"></div>
+                <div class="log-left l3"></div>
+                <div class="log-left l4"></div>
+
+                <!-- Bottom row of logs that move to the right -->
+                <div class="log-right l5"></div>
+                <div class="log-right l1"></div>
+                <div class="log-right l2"></div>
+                <div class="log-right l3"></div>
+                <div class="log-right l4"></div>
+                <div class="log-right l5"></div>
+                <div class="log-right l1"></div>
+                <div class="log-right l2"></div>
+                <div class="log-right l3"></div>
+
+                <!-- Safe Zone -->
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="play-again-button"></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+                <!-- Cars -->
+                <!-- Top row of cars that move to the left -->
+                <div class="car-left c2"></div>
+                <div class="car-left c3"></div>
+                <div class="car-left cl1"></div>
+                <div class="car-left c2"></div>
+                <div class="car-left c3"></div>
+                <div class="car-left cl1"></div>
+                <div class="car-left c2"></div>
+                <div class="car-left c3"></div>
+                <div class="car-left cl1"></div>
+
+                <!-- Bottom row of cars that move to the rightt -->
+                <div class="car-right cr1"></div>
+                <div class="car-right c2"></div>
+                <div class="car-right c3"></div>
+                <div class="car-right cr1"></div>
+                <div class="car-right c2"></div>
+                <div class="car-right c3"></div>
+                <div class="car-right cr1"></div>
+                <div class="car-right c2"></div>
+                <div class="car-right c3"></div>
+
+                <!-- Safe Zone -->
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="test"></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="starting-block"></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <article class="frog-directional-buttons">
+            <h1 class="controls-heading">CONTROLLER:</h1>
+            <button class="arrow-up" onclick="">&#8593</button>
+            <button class="arrow-left" onclick="">&#8592</button>
+            <button class="arrow-right" onclick="">&#8594</button>
+            <button class="arrow-down" onclick="">&#8595</button>
+            
+            
+        </article>
+        </div>
+
+        <div class="start-btn">
+            <button id="start-pause-button">CLICK HERE TO PLAY</button>
+        </div>
+    </main>
+
+    <footer>
+        <h3 id="result"><span id="result"></span></h3>
+    </footer>
+
 
     <script src="app.js"></script>
 </body>
+
 </html>
+
+
+
+<!-- <p>Use the arrow keys to navigate the frog from the pond to the gold chest.
+    You have 30 seconds to complete your journey.
+    Beware of merciless drivers while crossing the road.
+    The current in the river is too strong to swim.
+    Try timing your jumps across the logs to cross the river.</p>
+    <p>Good Luck!</p> -->
