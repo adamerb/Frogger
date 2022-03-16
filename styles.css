@@ -3,7 +3,6 @@ body {
     overflow: hidden;
 }
 
-
 header {
     display: flex;
     justify-content: center;
@@ -46,9 +45,9 @@ header {
 }
 
 .viewbox {
-display: flex;
-width: 100%;
-justify-content: center;
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
 .game-area {
@@ -180,15 +179,14 @@ justify-content: center;
     align-content: center;
     flex-wrap: wrap;
     flex-direction: column;
-    
 }
+
 .controls-heading {
     font-family: 'Press Start 2P', cursive;
     color: white;
     width: 100%;
     text-align: center;
     padding-bottom: 10px;
-
 }
 
 #arrow-up {
@@ -199,6 +197,7 @@ justify-content: center;
     cursor: pointer;
     margin-bottom: 70px;
 }
+
 #arrow-right {
     width: 30px; 
     height: 20px; 
@@ -207,6 +206,7 @@ justify-content: center;
     cursor: pointer;
     margin-bottom: 70px;
 }
+
 #arrow-down {
     width: 30px; 
     height: 20px; 
@@ -215,6 +215,7 @@ justify-content: center;
     cursor: pointer;
     margin-bottom: 70px;
 }
+
 #arrow-left{
     width: 30px; 
     height: 20px; 
