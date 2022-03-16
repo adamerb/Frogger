@@ -6,6 +6,11 @@ const logsLeft = document.querySelectorAll('.log-left')
 const logsRight = document.querySelectorAll('.log-right')
 const carsLeft = document.querySelectorAll('.car-left')
 const carsRight = document.querySelectorAll('.car-right')
+const directionalButtonUp = document.querySelector('#arrow-up')
+const directionalButtonDown = document.querySelector('#arrow-down')
+const directionalButtonLeft = document.querySelector('#arrow-left')
+const directionalButtonRight = document.querySelector('#arrow-right')
+
 
 // Current Index value decides where the frog starts in the grid
 let currentIndex = 76
@@ -16,53 +21,37 @@ let currentTime = 30
 
 const moveFrog = (e) => {
     squares[currentIndex].classList.remove('frog')
-    squares[currentIndex].style.backgroundColor=''
-    squares[currentIndex].style.background=''
+    squares[currentIndex].style.backgroundColor = ''
+    squares[currentIndex].style.background = ''
 
-    
-    switch(e.key){
-        case 'ArrowLeft' :
-            if (currentIndex % width !== 0){
+
+    switch (e.key) {
+        case 'ArrowLeft':
+            if (currentIndex % width !== 0) {
                 currentIndex -= 1
+                backgroundApp()
             }
             break;
-        
-        case 'ArrowUp' :
-            if (currentIndex - width >=0){
+        case 'ArrowUp':
+            if (currentIndex - width >= 0) {
                 currentIndex -= width
+                backgroundApp()
             }
-            
             break;
-        case 'ArrowDown' :
-            if (currentIndex + width < width * width){
+        case 'ArrowDown':
+            if (currentIndex + width < width * width) {
                 currentIndex += width
+                backgroundApp()
             }
-           
             break;
-        case 'ArrowRight' :
-            if (currentIndex % width < width-1){
+        case 'ArrowRight':
+            if (currentIndex % width < width - 1) {
                 currentIndex += 1
+                backgroundApp()
             }
-            break; 
+            break;
     }
-   
-    console.log('current index: ',currentIndex)
-        if (currentIndex>=63 || currentIndex>=36 && currentIndex<=44 || currentIndex<=17){
-            squares[currentIndex].style.backgroundColor='green'
-            squares[currentIndex].classList.add('frog')
-        } else if (currentIndex<63 && currentIndex>=45){
-            squares[currentIndex].style.backgroundColor='gray'
-            squares[currentIndex].classList.add('frog')
-        } else if (currentIndex<36 && currentIndex>=18 && squares[currentIndex].classList.contains('l4')||squares[currentIndex].classList.contains('l5')){
-            squares[currentIndex].style.backgroundColor='aqua'
-            squares[currentIndex].classList.add('frog')
-        } else if (currentIndex<36 && currentIndex>=18 && squares[currentIndex].classList.contains('l1')||squares[currentIndex].classList.contains('l2')||squares[currentIndex].classList.contains('l3')){
-            squares[currentIndex].style.background='no-repeat center/100% url("./images/frog.png"),no-repeat center/500% url("./images/log.png")'   
-            squares[currentIndex].classList.add('frog')       
-        } 
-        
-        // squares[currentIndex].classList.add('frog')
-
+    // console.log('current index: ', currentIndex)
 }
 
 
@@ -84,7 +73,7 @@ const checkOutcomes = () => {
 
 // Moves the top row of logs to the left
 const moveLogLeft = (logLeft) => {
-    switch(true) {
+    switch (true) {
         case logLeft.classList.contains('l1'):
             logLeft.classList.remove('l1')
             logLeft.classList.add('l2')
@@ -110,7 +99,7 @@ const moveLogLeft = (logLeft) => {
 
 // Moves the bottom row of logs to the right
 const moveLogRight = (logRight) => {
-    switch(true) {
+    switch (true) {
         case logRight.classList.contains('l5'):
             logRight.classList.remove('l5')
             logRight.classList.add('l4')
@@ -135,7 +124,7 @@ const moveLogRight = (logRight) => {
 }
 
 const moveCarLeft = (carLeft) => {
-    switch(true) {
+    switch (true) {
         case carLeft.classList.contains('cl1'):
             carLeft.classList.remove('cl1')
             carLeft.classList.add('c2')
@@ -152,7 +141,7 @@ const moveCarLeft = (carLeft) => {
 }
 
 const moveCarRight = (carRight) => {
-    switch(true) {
+    switch (true) {
         case carRight.classList.contains('cr1'):
             carRight.classList.remove('cr1')
             carRight.classList.add('c3')
@@ -175,36 +164,113 @@ const lose = () => {
         squares[currentIndex].classList.contains('l4') ||
         squares[currentIndex].classList.contains('l5') ||
         currentTime <= 0
-        ){
+    ) {
         squares[currentIndex].classList.remove('frog')
-        squares[currentIndex].style.background=null
+        squares[currentIndex].style.background = null
         resultDisplay.textContent = 'You Lose!'
         clearInterval(timerId)
         clearInterval(outcomeTimerId)
         document.removeEventListener('keyup', moveFrog)
+        document.removeEventListener('click', moveFrog)
     }
 }
 
 
 const win = () => {
-    if (squares[currentIndex].classList.contains('ending-block')){
+    if (squares[currentIndex].classList.contains('ending-block')) {
         resultDisplay.textContent = 'You Win!'
         clearInterval(timerId)
         clearInterval(outcomeTimerId)
         squares[currentIndex].classList.remove('frog')
         document.removeEventListener('keyup', moveFrog)
+
     }
 }
-startPauseButton.addEventListener('click',() => {
+
+startPauseButton.addEventListener('click', () => {
     if (timerId) {
-        clearInterval(timerId)  
-        clearInterval(outcomeTimerId) 
+        clearInterval(timerId)
+        clearInterval(outcomeTimerId)
         outcomeTimerId = null
         timerId = null
         document.removeEventListener('keyup', moveFrog)
+        
+
     } else {
         timerId = setInterval(autoMoveElements, 1000)
         outcomeTimerId = setInterval(checkOutcomes, 50)
-        document.addEventListener('keyup', moveFrog )
+        document.addEventListener('keyup', moveFrog)
+
+        directionalButtonUp.addEventListener('click', () => {
+            console.log('button click up')
+            squares[currentIndex].classList.remove('frog')
+            squares[currentIndex].style.backgroundColor = ''
+            squares[currentIndex].style.background = ''
+            if (currentIndex - width >= 0) {
+                currentIndex -= width
+            }
+            backgroundApp()
+            squares[currentIndex].classList.add('frog')
+        })
+        directionalButtonDown.addEventListener('click', () => {
+            console.log('button click down')
+            squares[currentIndex].classList.remove('frog')
+            squares[currentIndex].style.backgroundColor = ''
+            squares[currentIndex].style.background = ''
+            if (currentIndex + width < width * width) {
+                currentIndex += width
+            }
+            backgroundApp()
+            squares[currentIndex].classList.add('frog')
+        })
+        
+        directionalButtonLeft.addEventListener('click', () => {
+            console.log('button click left')
+            squares[currentIndex].classList.remove('frog')
+            squares[currentIndex].style.backgroundColor = ''
+            squares[currentIndex].style.background = ''
+            if (currentIndex % width !== 0) {
+                currentIndex -= 1
+            }
+            backgroundApp()
+            squares[currentIndex].classList.add('frog')
+        })
+        directionalButtonRight.addEventListener('click', () => {
+            console.log('button click right')
+            squares[currentIndex].classList.remove('frog')
+            squares[currentIndex].style.backgroundColor = ''
+            squares[currentIndex].style.background = ''
+            if (currentIndex % width < width - 1) {
+                currentIndex += 1
+            }
+            backgroundApp()
+            squares[currentIndex].classList.add('frog')
+        })
+        
+
     }
 })
+
+const backgroundApp = () => {
+    if (currentIndex >= 63 || currentIndex >= 36 && currentIndex <= 44 || currentIndex <= 17) {
+        squares[currentIndex].style.backgroundColor = 'green'
+        squares[currentIndex].classList.add('frog')
+    } else if (currentIndex < 63 && currentIndex >= 45) {
+        squares[currentIndex].style.backgroundColor = 'gray'
+        squares[currentIndex].classList.add('frog')
+    } else if (currentIndex < 36 && currentIndex >= 18 && squares[currentIndex].classList.contains('l4') || squares[currentIndex].classList.contains('l5')) {
+        squares[currentIndex].style.backgroundColor = 'aqua'
+        squares[currentIndex].classList.add('frog')
+    } else if (currentIndex < 36 && currentIndex >= 18 && squares[currentIndex].classList.contains('l1') || squares[currentIndex].classList.contains('l2') || squares[currentIndex].classList.contains('l3')) {
+        squares[currentIndex].style.background = 'no-repeat center/100% url("./images/frog.png"),no-repeat center/500% url("./images/log.png")'
+        squares[currentIndex].classList.add('frog')
+    }
+}
+
+
+
+
+
+
+
+

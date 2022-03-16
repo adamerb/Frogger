@@ -2,9 +2,7 @@ body {
     background-color: black;
     overflow: hidden;
 }
-/* main {
-    display: flex;
-} */
+
 
 header {
     display: flex;
@@ -36,18 +34,15 @@ header {
     text-align: center;
 }
 
-
 .game-info {
     font-family: 'Press Start 2P', cursive;
     color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    align-content: center;
     font-size: 8px;
     text-align: center;
     width: 100%;
-    
 }
 
 .viewbox {
@@ -64,7 +59,6 @@ justify-content: center;
     align-content: center;
     align-items: center;
     justify-content: center;
-   
 }
 
 .grid {
@@ -73,7 +67,6 @@ justify-content: center;
     display: flex;
     flex-wrap: wrap;
     background-color: green;
-    border: solid 1px white;
 }
 
 .grid div {
@@ -82,12 +75,10 @@ justify-content: center;
 }
 
 .ending-block {
-    /* background-color: red; */
     background: no-repeat center/80% url('./images/treasure.png');
 }
 
 .starting-block {
-    /* background-color: blue; */
     background: no-repeat center/120% url('./images/pond.png');
 }
 
@@ -171,7 +162,7 @@ justify-content: center;
     color: white;
     display: flex;
     flex-direction: column;
-    font-size: 8px;
+    font-size: 10px;
     height: 400px;
     width: 300px;
     margin-right: 40px;
@@ -179,11 +170,9 @@ justify-content: center;
 
 }
 
-
-
 .frog-directional-buttons{
     display:flex;
-    font-size: 8px;
+    font-size: 10px;
     height: 100%;
     width: 300px;
     justify-content: center;
@@ -198,39 +187,40 @@ justify-content: center;
     color: white;
     width: 100%;
     text-align: center;
-    padding-bottom: 80px;
+    padding-bottom: 10px;
 
 }
 
-.arrow-up {
+#arrow-up {
     width: 30px; 
     height: 20px; 
     background-color: black;
     color: white;
     cursor: pointer;
-    margin-bottom: 20px;
+    margin-bottom: 70px;
 }
-.arrow-right {
+#arrow-right {
     width: 30px; 
     height: 20px; 
     background-color: black;
     color: white;
     cursor: pointer;
-    margin-bottom: 20px;
+    margin-bottom: 70px;
 }
-.arrow-down {
+#arrow-down {
     width: 30px; 
     height: 20px; 
     background-color: black;
     color: white;
     cursor: pointer;
-    margin-bottom: 20px;
+    margin-bottom: 70px;
 }
-.arrow-left{
+#arrow-left{
     width: 30px; 
     height: 20px; 
     background-color: black;
     color: white;
     cursor: pointer;
-    margin-bottom: 20px;
+    margin-bottom: 70px;
 }
+
